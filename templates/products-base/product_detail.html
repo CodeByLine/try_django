@@ -1,0 +1,21 @@
+{ % extends "base.html" % }
+
+{% block content %}
+    
+    <h1>Base Dir Prod Detail Page </h1>
+    
+  
+    {{ request.user }}
+
+
+  
+    {{ object.title}},  
+    
+    {% if object.escription %}
+    {% else %}
+    <p>Description coming soon</p>
+    {% endif %}
+  
+    {{object.price}},
+{% endblock %}
+

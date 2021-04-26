@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <h1>Blog Form Page </h1>
+
+    <h3>Forms.form (RawBlogForm)</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+      {{ form.as_p }}
+  <input type="submit" value="save" >
+
+  <hr>
+    
+    <h3>Model Form (Blog Form) </h3>
+  <form method="POST">
+      {% csrf_token %}
+    {{ form.as_p }}
+<input type="submit" value="save" >
+</form>
+{% endblock %}
+

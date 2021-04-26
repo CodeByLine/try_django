@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <h1>BASE_DIR_templates </h1>
+    <br>
+    <h2>View <span style='color:red'> Terminal </span> for the print out statement of args and kwargs</h2>
+
+    {{ my_dog }}, {{my_hunter}}, {{my_praying_mantis}}
+
+    <h1>My Buddies</h1>
+
+    {% for my_buddy in my_buddies %}
+        {{ forloop.counter }}.  {{ my_buddy }}, &nbsp;
+    {% endfor %}
+
+    <h2>Filters</h2>
+
+    {% for my_buddy in my_buddies  %}
+    {% if my_buddy == "Pumpkin" %}
+      <p>My mighty hunter is  {{ my_buddy|upper }} </p>
+    {% elif my_buddy == "Tiny" %}
+     <p>My mighty_teeny is  {{ my_buddy }} </p>
+     {% else %}
+     <p>My sweet girl is {{ my_buddy }} </p>
+      {% endif %}
+   {% endfor %}
+
+    <h2>Conditionals</h2>
+
+    {% for my_buddy in my_buddies %}
+     {% if my_buddy == "Pumpkin" %}
+       <p>My mighty hunter is  {{ my_buddy }} </p>
+     {% elif my_buddy == "Tiny" %}
+      <p>My mighty_teeny is  {{ my_buddy }} </p>
+      {% else %}
+      <p>My sweet girl is {{ my_buddy }} </p>
+       {% endif %}
+    {% endfor %}
+
+
+    <h2>"safe" filter </h2>
+
+{{my_html|safe }}
+    
+{% endblock %}
+

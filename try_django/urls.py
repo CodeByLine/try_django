@@ -19,13 +19,16 @@ import os
 from pages.views import home_view, another_view, also_view
 from django.http import HttpResponse
 
+from django.urls import reverse
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include('pages.urls')),
+    path('blog/', include('blog.urls')),
+    path('products/', include('products.urls')),
     path('', home_view, name='home'),
     path('home/', home_view, name='home'),
     path('another/', another_view, name='another'),
     path('also/', also_view, name='also'),
 
-    
 ]

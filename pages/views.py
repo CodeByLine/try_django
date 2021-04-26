@@ -8,8 +8,18 @@ from django.contrib.auth.models import User
 #     return "<h1>Hello World</h1>"
 
 def home_view(request):
-    # print(request.user)
-    return render(request, 'home.html',{})
+    print(request.user)
+    my_context = {
+        "my_dog": "Coco",
+        "my_hunter" : "Pumpkin",
+        "my_praying_mantis" : "Tiny",
+        "my_buddies" : ["Coco", "Pumpkin", "Tiny"],
+        "my_html" : "<h2>Safe filter</h2>",
+    }
+
+    return render(request, 'home.html', my_context)
+
+
     # html = "<html><body><h1>Hello World</h1></body></html>"
     # return HttpResponse(html)
 

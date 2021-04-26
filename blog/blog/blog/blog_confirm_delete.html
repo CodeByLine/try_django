@@ -1,0 +1,23 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <h1>Blog Delete Page </h1>
+     
+    <form method="POST">
+        {% csrf_token %}
+
+        <fieldset class="form-group">
+            <legend class="border-bottom mb4">Delete Blog </legend>
+                <h2>Are you sure?</h2>
+           <button href="" class="btn btn-danger" type="submit">Yes, delete</button>
+
+        </fieldset>
+
+
+
+    </form>
+{% endblock %}
+
