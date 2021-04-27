@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Article Create </h1>
+
+
+    <h3>Not Working --Forms.form (ArticleCreateForm)</h3>
+
+    < form method="POST">
+        {% csrf_token %}
+      { { form.as_p } }
+  <  input type="submit" value="save" >
+
+  <hr>
+    
+    <h3>Model Form (Article Form) </h3>
+  <form method="POST">
+      {% csrf_token %}
+    {{ form.as_p }}
+<input type="submit" value="save" >
+</form>
+{% endblock %}

@@ -7,7 +7,7 @@
     {% for item in object_list %}
 
     <p> {{item.id}} - <a href='/products/{{item.id}}'>
-    {{item.title}}</a>{{item.author}} </p>
+    {{item.title}}</a> by {{item.author}} </p>
     {% endfor %}
     <hr>
     {{object_list }}

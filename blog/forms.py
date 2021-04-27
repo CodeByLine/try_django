@@ -1,10 +1,20 @@
 from django import forms
-from .models import Blog
+from .models import Blog, Article
 
 
 class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
+        fields = [
+            'title',
+            'description',
+            'author',
+        ]
+
+
+class ArticleForm(forms.ModelForm):
+    class Meta:
+        model = Article
         fields = [
             'title',
             'description',
