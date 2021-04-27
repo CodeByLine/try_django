@@ -115,6 +115,8 @@ class ArticleConfirmDeleteVew(generic.DeleteView):
 
 # Below: Base View Class = View
 # from django.views import View
+
+## in class-based view, function name matters: "get" or "post"
 # class ArticleView(View):
     # template_name = 'name.html'
 #     def get(self, request, *args, **kwargs):
@@ -122,3 +124,19 @@ class ArticleConfirmDeleteVew(generic.DeleteView):
 
 #     def post(self, request, *args, **kwargs):
 #         return render(rquest, 'about.html', {})
+
+
+# class ArticleCreateView(View):
+#   templte_name = 'name.html'
+#   def get(self, request, *args, **kwargs):
+        # form = ArticleModelForm()  ## empty form
+        # context = { "form": form }
+        # return render(rquest, self.template_name, context)
+
+#   def post(self, request, *args, **kwargs):
+        # form = ArticleModelForm(request.POST) ##to grab the posted data
+        # if form.is_valid():
+        #     form.save()
+        #     form = ArticleModelForm() ## re-initialize form
+        # context = { "form": form } ## for form data to come through
+        # return render(rquest, self.template_name, context)
